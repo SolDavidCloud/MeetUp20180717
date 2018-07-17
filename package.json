@@ -1,0 +1,18 @@
+{
+  "name": "dynamodb_local_sample",
+  "version": "1.0.0",
+  "description": "Ejemplo de uso de Dynamo DB Local",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "dynamodb"
+  ],
+  "author": "David Sol",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.275.1"
+  }
+}

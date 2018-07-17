@@ -1,0 +1,110 @@
+Amazon DynamoDB is a fully managed proprietary NoSQL database service that supports key-value and document data structures and is offered by Amazon.com as part of the Amazon Web Services portfolio. DynamoDB exposes a similar data model and derives its name from Dynamo, but has a different underlying implementation. Dynamo had a multi-master design requiring the client to resolve version conflicts and DynamoDB uses synchronous replication across multiple datacenters for high durability and availability. DynamoDB was announced by Amazon CTO Werner Vogels on January 18, 2012. and is presented as an evolution of Amazon SimpleDB solution.
+
+DynamoDB differs from other Amazon services by allowing developers to purchase a service based on throughput, rather than storage. If Auto Scaling is enabled, then the database will scale automatically. Additionally, administrators can request throughput changes and DynamoDB will spread the data and traffic over a number of servers using solid-state drives, allowing predictable performance. It offers integration with Hadoop via Elastic MapReduce.
+
+In September 2013, Amazon made available a local development version of DynamoDB so developers can test DynamoDB-backed applications locally.
+
+Amazon DynamoDB is "built on the principles of Amazon Dynamo storage technology", an internal storage system used initially for Amazon website.
+
+Languages/Frameworks with a DynamoDB binding include Java, Node.js, Go, C# .NET, Perl, PHP, Python, Ruby, Haskell and Erlang.
+
+Amazon DynamoDB is a nonrelational database that delivers reliable performance at any scale. It's a fully managed, multi-region, multi-master database that provides consistent single-digit millisecond latency, and offers built-in security, backup and restore, and in-memory caching.
+
+More than 100,000 AWS customers have chosen DynamoDB for mobile, web, gaming, ad tech, IoT, and many other applications that need low-latency data access. Create a new table for your application and let DynamoDB handle the rest. 
+
+PERFORMANCE AT SCALE
+DynamoDB delivers consistent, single-digit millisecond responsiveness at any scale. Build apps with virtually unlimited throughput and storage. Add an in-memory cache that reduces response times from milliseconds to microseconds, without any app changes.
+
+FULLY MANAGED
+DynamoDB is a serverless database that automatically scales throughput up or down, and continuously backs up your data for protection. DynamoDB gives your globally distributed applications fast access to local data by replicating tables across multiple AWS Regions.
+
+ENTERPRISE-READY
+Built for mission-critical workloads. Your data is secured with encryption and guaranteed reliability with a service level agreement. You have full oversight of your tables with fine-grained access control, integrated monitoring tools, and support for private connections over VPN.
+
+Amazon DynamoDB Accelerator
+Amazon DynamoDB Accelerator (DAX) delivers fast read performance for your DynamoDB tables at scale by enabling you to use a fully managed, highly available, in-memory cache. Using DAX, you can improve the read performance of your DynamoDB tables by up to 10x—taking the time required for reads from milliseconds to microseconds, even at millions of requests per second. Learn more »
+
+Develop locally, scale globally
+Download DynamoDB to develop and test applications locally on your laptop or in an Amazon EC2 instance. When your solution is ready, easily scale your application in the AWS Cloud with DynamoDB. Learn more »
+
+What is serverless computing?
+Serverless computing allows you to build and run applications and services without thinking about servers. Serverless applications don't require you to provision, scale, and manage any servers. You can build them for nearly any type of application or backend service, and everything required to run and scale your application with high availability is handled for you.
+
+Why use serverless computing?
+Building serverless applications means that your developers can focus on their core product instead of worrying about managing and operating servers or runtimes, either in the cloud or on-premises. This reduced overhead lets developers reclaim time and energy that can be spent on developing great products which scale and that are reliable.
+
+What are the benefits of serverless computing?
+Serverless applications have three main benefits.
+
+No server management
+Flexible scaling
+Automated high availabilty
+
+NO SERVER MANAGEMENT
+There is no need to provision or maintain any servers. There is no software or runtime to install, maintain, or administer. 
+
+FLEXIBLE SCALING
+Your application can be scaled automatically or by adjusting its capacity through toggling the units of consumption (e.g. throughput, memory) rather than units of individual servers.
+
+AUTOMATED HIGH AVAILABILITY
+Serverless applications have built-in availability and fault tolerance. You don't need to architect for these capabilities since the services running the application provide them by default.
+
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
+
+The downloadable version of DynamoDB lets you write and test applications without accessing the DynamoDB web service. Instead, the database is self-contained on your computer. When you're ready to deploy your application in production, you can make a few minor changes to the code so that it uses the DynamoDB web service.
+
+Having this local version helps you save on provisioned throughput, data storage, and data transfer fees. In addition, you don't need an Internet connection while you're developing your application.
+
+Downloading and Running DynamoDB on Your Computer
+The downloadable version of DynamoDB is provided as an executable .jar file. The application runs on Windows, Linux, macOS X, and other platforms that support Java.
+
+Follow these steps to set up and run DynamoDB on your computer:
+
+Download DynamoDB for free using one of the following links:
+
+Important
+
+To run DynamoDB on your computer, you must have the Java Runtime Environment (JRE) version 6.x or newer. The application doesn't run on older JRE versions.
+
+After you download the archive, extract the contents and copy the extracted directory to a location of your choice.
+
+To start DynamoDB on your computer, open a command prompt window, navigate to the directory where you extracted DynamoDBLocal.jar, and type the following command:
+
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+
+Note
+
+DynamoDB processes incoming requests until you stop it. To stop DynamoDB, type Ctrl+C at the command prompt.
+
+DynamoDB uses port 8000 by default. If port 8000 is unavailable, this command throws an exception. For a complete list of DynamoDB runtime options, including -port , type this command:
+
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -help
+
+Before you can access DynamoDB programmatically or through the AWS CLI, you must configure your credentials to enable authorization for your applications. Downloadable DynamoDB requires any credentials to work. For example:
+
+AWS Access Key ID: "fakeMyKeyId"
+AWS Secret Access Key: "fakeSecretAccessKey"
+
+You can use the aws configure command of the AWS CLI to setup credentials. For more information, see Using the CLI.
+
+You can start writing applications. To access DynamoDB running locally, use the --endpoint-url parameter. For example, to list DynamoDB tables:
+
+aws dynamodb list-tables --endpoint-url http://localhost:8000
+
+start.bat
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb -inMemory
+
+Setting the Local Endpoint
+By default, the AWS SDKs and tools use endpoints for the Amazon DynamoDB web service. To use the SDKs and tools with the downloadable version of DynamoDB, you must specify the local endpoint:
+
+1.- Instalar Node.js
+2.- Instalar DynamoDB Local
+3.- Crear un directorio
+4.- Preparar el projecto
+    npm init
+5.- Configurar credenciales de aws
+    type C:\Users\USERNAME\.aws\credentials
+    type C:\Users\dsolllav\.aws\credentials
+6.- Instalar SDK para node
+    npm install aws-sdk --save
+7.- Arrancar DynamoDB Local
